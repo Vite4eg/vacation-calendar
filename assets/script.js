@@ -88,7 +88,6 @@ BX.namespace('BX.VacationPlanning');
                 month: 0,
                 year: 2024,
                 days: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
-                items,
 
                 selected: new Set(),
 
@@ -115,7 +114,7 @@ BX.namespace('BX.VacationPlanning');
                 let result = [];
 
                 const firstDayNumber = this.firstDayOfSelectedMonth.getDay();
-                for (let i = firstDayNumber; i > 1; i--) {
+                for (let i = firstDayNumber - 1; i > 0; i--) {
                     result.push(new Date(
                         this.firstDayOfSelectedMonth.getFullYear(),
                         this.firstDayOfSelectedMonth.getMonth(),
